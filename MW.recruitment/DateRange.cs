@@ -17,18 +17,18 @@ namespace MW.recruitment
             EndDate = endDate;
         }
 
-        public string DisplayRange(DateRange range)
+        public string DisplayRange()
         {
-            if (range.StartDate > range.EndDate)
+            if (this.StartDate > this.EndDate)
                 return "Error. The StartDate is greater than the EndDate.";
-            else if (range.StartDate == range.EndDate)
-                return range.StartDate.ToShortDateString();
-            else if (range.StartDate.Year == range.EndDate.Year && range.StartDate.Month == range.EndDate.Month)
-                return string.Format("{0} - {1}.{2}.{3}", range.StartDate.Day, range.EndDate.Day, range.StartDate.Month, range.StartDate.Year);
-            else if (range.StartDate.Year == range.EndDate.Year)
-                return string.Format("{0}.{1} - {2}.{3}.{4}", range.StartDate.Day, range.StartDate.Month, range.EndDate.Day, range.EndDate.Month, range.EndDate.Year);
+            else if (this.StartDate == this.EndDate)
+                return this.StartDate.ToShortDateString();
+            else if (this.StartDate.Year == this.EndDate.Year && this.StartDate.Month == this.EndDate.Month)
+                return string.Format("{0} - {1}.{2}.{3}", this.StartDate.Day, this.EndDate.Day, this.StartDate.Month, this.StartDate.Year);
+            else if (this.StartDate.Year == this.EndDate.Year)
+                return string.Format("{0}.{1} - {2}.{3}.{4}", this.StartDate.Day, this.StartDate.Month, this.EndDate.Day, this.EndDate.Month, this.EndDate.Year);
             else
-                return string.Format("{0}.{1}.{2} - {3}.{4}.{5}", range.StartDate.Day, range.StartDate.Month, range.StartDate.Year, range.EndDate.Day, range.EndDate.Month, range.EndDate.Year);
+                return string.Format("{0}.{1}.{2} - {3}.{4}.{5}", this.StartDate.Day, this.StartDate.Month, this.StartDate.Year, this.EndDate.Day, this.EndDate.Month, this.EndDate.Year);
         }
 
     }
