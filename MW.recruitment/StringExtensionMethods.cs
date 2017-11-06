@@ -8,17 +8,18 @@ namespace MW.recruitment
 {
     public static class StringExtensionMethods
     {
-        public static bool TryParseToLocalDate(this string dateString)
+        public static bool TryParseToLocalDate(this string dateString, out DateTime result)
         {
             try
             {
-                DateTime.Parse(dateString);
+                result = DateTime.Parse(dateString);
                 return true;
             }
             catch (FormatException)
             {
                 Console.WriteLine("{0} - This is wrong date format. Your System date format is: {1}", dateString, DateTime.Now.ToShortDateString());
             }
+            result = new DateTime();
             return false;
         }
     }
