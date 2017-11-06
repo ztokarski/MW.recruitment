@@ -10,6 +10,7 @@ namespace MW.recruitment
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello Making Waves");
         }
     }
 }
