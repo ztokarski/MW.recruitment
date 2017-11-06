@@ -10,7 +10,16 @@ namespace MW.recruitment
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Making Waves");
+            var date1 = "1998.10.03";
+            var date2 = "asdf";
+
+            date1.TryParseToLocalDate(out DateTime startDate);
+            date2.TryParseToLocalDate(out DateTime endDate);
+
+            Console.WriteLine(startDate.ToShortDateString());
+            Console.WriteLine(endDate.ToShortDateString());
         }
     }
+
+
 }
