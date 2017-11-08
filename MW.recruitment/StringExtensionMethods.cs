@@ -10,17 +10,15 @@ namespace MW.recruitment
     {
         public static bool TryParseToLocalDate(this string dateString, out DateTime result)
         {
-            try
+            if (DateTime.TryParse(dateString, out result))
             {
                 result = DateTime.Parse(dateString);
                 return true;
             }
-            catch (FormatException)
+            else
             {
-                Console.WriteLine("{0} - This is wrong date format. Your System date format is: {1}", dateString, DateTime.Now.ToShortDateString());
+                throw new DateFormatException();
             }
-            result = new DateTime();
-            return false;
         }
     }
 }
