@@ -16,15 +16,43 @@ namespace MW.recruitment.Tests
         [ExpectedException(typeof(ArgumentsNumberException),"Two arguments needed.")]
         public void CheckInputLength_OnlyOneParam_ThrowsException()
         {
-            string[] args = { "01/01/2001" };
+            //given
+            string[] args = { "01/01/01" };
+
+            //when
+            InputValidator.CheckInputLength(args);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentsNumberException), "Two arguments needed.")]
+        public void CheckInputLength_MoreThan2Params_ThrowsException()
+        {
+            //given
+            string[] args = { "01/01/01", "01/01/01", "01/01/01" };
+
+            //when
+            InputValidator.CheckInputLength(args);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentsNumberException), "Two arguments needed.")]
+        public void CheckInputLength_WithoutParams_ThrowsException()
+        {
+            //given
+            string[] args = { };
+
+            //when
             InputValidator.CheckInputLength(args);
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentsOrderException), "Wrong arguments order.")]
-        public void CheckInputOrder_WrongParamOrder_ThrowsException()
+        public void CheckInputOrder_IncorrectParamOrder_ThrowsException()
         {
-            string[] args = { "01/01/2001", "01/01/2000" };
+            //given
+            string[] args = { "01/01/99", "01/01/98" };
+
+            //when
             InputValidator.CheckInputOrder(args);
         }
     }
