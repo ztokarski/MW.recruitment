@@ -44,17 +44,6 @@ namespace MW.recruitment.Tests
             //when
             InputValidator.CheckInputLength(args);
         }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentsOrderException), "Wrong arguments order.")]
-        public void CheckInputOrder_IncorrectParamOrder_ThrowsException()
-        {
-            //given
-            string[] args = { "01/01/99", "01/01/98" };
-
-            //when
-            InputValidator.CheckInputOrder(args);
-        }
     }
 }
 

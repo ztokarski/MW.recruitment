@@ -2,6 +2,7 @@
 using MW.recruitment;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,8 @@ namespace MW.recruitment.Tests
             var resultActual = DateRange.CreateInstance(dates);
 
             //then
-            Assert.AreEqual(expectedStartDate, resultActual.StartDate);
-            Assert.AreEqual(expectedEndDate, resultActual.EndDate);
+            Assert.AreEqual(expectedStartDate.ToString(), resultActual.StartDate.ToString());
+            Assert.AreEqual(expectedEndDate.ToString(), resultActual.EndDate.ToString());
         }
         
         [TestMethod()]
@@ -39,8 +40,8 @@ namespace MW.recruitment.Tests
             var resultActual = DateRange.CreateInstance(dates);
 
             //then
-            Assert.AreEqual(expectedStartDate, resultActual.StartDate);
-            Assert.AreEqual(expectedEndDate, resultActual.EndDate);
+            Assert.AreEqual(expectedStartDate.ToString(), resultActual.StartDate.ToString());
+            Assert.AreEqual(expectedEndDate.ToString(), resultActual.EndDate.ToString());
         }
 
         [TestMethod()]
@@ -55,8 +56,8 @@ namespace MW.recruitment.Tests
             var resultActual = DateRange.CreateInstance(dates);
 
             //then
-            Assert.AreEqual(expectedStartDate, resultActual.StartDate);
-            Assert.AreEqual(expectedEndDate, resultActual.EndDate);
+            Assert.AreEqual(expectedStartDate.ToString(), resultActual.StartDate.ToString());
+            Assert.AreEqual(expectedEndDate.ToString(), resultActual.EndDate.ToString());
         }
 
         [TestMethod()]
@@ -71,8 +72,8 @@ namespace MW.recruitment.Tests
             var resultActual = DateRange.CreateInstance(dates);
 
             //then
-            Assert.AreEqual(expectedStartDate, resultActual.StartDate);
-            Assert.AreEqual(expectedEndDate, resultActual.EndDate);
+            Assert.AreEqual(expectedStartDate.ToString(), resultActual.StartDate.ToString());
+            Assert.AreEqual(expectedEndDate.ToString(), resultActual.EndDate.ToString());
         }
 
         [TestMethod()]
@@ -107,19 +108,5 @@ namespace MW.recruitment.Tests
             //when
             DateRange.CreateInstance(dates).ToString();
         }
-
-
-
-        //[TestMethod()]
-        //public void CreateInstance_EnglishMonthNamesInParams()
-        //{
-        //    string[] dates = { "2001/Jan/01", "2002/01/Feb" };
-        //    var resultActual = DateRange.CreateInstance(dates).ToString();
-        //    var resultExpected = new DateRange(new DateTime(2001, 01, 01), new DateTime(2002, 02, 01)).ToString();
-        //    Assert.AreEqual(resultExpected, resultActual);
-        //}
-
-        
-
     }
 }
