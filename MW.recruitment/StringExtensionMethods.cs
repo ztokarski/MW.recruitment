@@ -15,10 +15,7 @@ namespace MW.recruitment
                 result = DateTime.Parse(dateString);
                 return true;
             }
-            else
-            {
-                throw new DateFormatException();
-            }
+            throw new DateFormatException();
         }
     }
 }
