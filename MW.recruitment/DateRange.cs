@@ -9,15 +9,15 @@ namespace MW.recruitment
 {
     public class DateRange
     {
-        DateTime StartDate;
-        DateTime EndDate;
+        DateTime startDate;
+        DateTime endDate;
         string separator = CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator;
 
 
-        private DateRange(DateTime startDate, DateTime endDate)
+        public DateRange(DateTime startDate, DateTime endDate)
         {
-            StartDate = startDate;
-            EndDate = endDate;
+            this.startDate = startDate;
+            this.endDate = endDate;
         }
 
         public static DateRange CreateInstance(string[] dates)
@@ -32,28 +32,28 @@ namespace MW.recruitment
         public string ToString()
         {
             if (YearsAreDifferent())
-                return $"{StartDate.ToShortDateString()} - {EndDate.ToShortDateString()}";
+                return $"{startDate.ToShortDateString()} - {endDate.ToShortDateString()}";
             else if (MonthsAreDifferent())
-                return $"{GetDay(StartDate)}{separator}{GetMonth(StartDate)} - {GetDay(EndDate)}{separator}{GetMonth(EndDate)}{separator}{EndDate.Year}";
+                return $"{GetDay(startDate)}{separator}{GetMonth(startDate)} - {GetDay(endDate)}{separator}{GetMonth(endDate)}{separator}{endDate.Year}";
             else if (DaysAreDifferent())
-                return $"{StartDate.Day} - {EndDate.Day}{separator}{StartDate.Month}{separator}{StartDate.Year}";
+                return $"{startDate.Day} - {endDate.Day}{separator}{startDate.Month}{separator}{startDate.Year}";
             else
-                return StartDate.ToShortDateString();
+                return startDate.ToShortDateString();
         }
 
         private bool YearsAreDifferent()
         {
-            return StartDate.Year != EndDate.Year;
+            return startDate.Year != endDate.Year;
         }
 
         private bool DaysAreDifferent()
         {
-            return StartDate.Day != EndDate.Day;
+            return startDate.Day != endDate.Day;
         }
 
         private bool MonthsAreDifferent()
         {
-            return StartDate.Month != EndDate.Month;
+            return startDate.Month != endDate.Month;
         }
 
         
