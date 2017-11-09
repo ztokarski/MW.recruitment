@@ -23,7 +23,7 @@ namespace MW.recruitment
 
     public class ArgumentsOrderException : Exception
     {
-        public ArgumentsOrderException() : base($"The First Date is greater than the Second Date")
+        public ArgumentsOrderException() : base($"The First Date is greater than the Second Date.")
         {
         }
     }

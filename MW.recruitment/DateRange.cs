@@ -9,8 +9,8 @@ namespace MW.recruitment
 {
     public class DateRange
     {
-        DateTime StartDate;
-        DateTime EndDate;
+        public DateTime StartDate { get; }
+        public DateTime EndDate { get; }
         string separator = CultureInfo.CurrentCulture.DateTimeFormat.DateSeparator;
 
 
@@ -55,8 +55,6 @@ namespace MW.recruitment
         {
             return StartDate.Month != EndDate.Month;
         }
-
-        
 
         public string GetDay(DateTime datetime)
         {
