@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MW.recruitment
 {
-    class InputValidator
+    public class InputValidator
     {
         public static void Validate(string[] args)
         {
@@ -16,7 +16,9 @@ namespace MW.recruitment
 
         public static void CheckInputLength (string [] args)
         {
-            if (args.Length != 2)
+            int correctParamsNum = 2;
+
+            if (args.Length != correctParamsNum)
             {
                 throw new ArgumentsNumberException();
             }
