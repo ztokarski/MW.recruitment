@@ -14,7 +14,6 @@ namespace MW.recruitment.Tests
         [TestMethod()]
         public void TryParseToLocalDate_CorrectParam_GetTrue()
         {
-            //var testString = new DateTime(01,01,01).ToShortDateString();
             var testString = "2001/01/01";
             Assert.IsTrue(testString.TryParseToLocalDate(out DateTime result));
         }
@@ -22,7 +21,6 @@ namespace MW.recruitment.Tests
         [TestMethod()]
         public void TryParseToLocalDate_MonthNameParam_GetTrue()
         {
-            //var testString = new DateTime(01,01,01).ToShortDateString();
             var testString = "01/Jan/01";
             Assert.IsTrue(testString.TryParseToLocalDate(out DateTime result));
         }
@@ -30,7 +28,6 @@ namespace MW.recruitment.Tests
         [TestMethod()]
         public void TryParseToLocalDate_ShortYearParam_GetTrue()
         {
-            //var testString = new DateTime(01,01,01).ToShortDateString();
             var testString = "01/01/01";
             Assert.IsTrue(testString.TryParseToLocalDate(out DateTime result));
         }
@@ -38,7 +35,6 @@ namespace MW.recruitment.Tests
         [TestMethod()]
         public void TryParseToLocalDate_DifferentSeparatorsParam_GetTrue()
         {
-            //var testString = new DateTime(01,01,01).ToShortDateString();
             var testString = "01:01:01";
             Assert.IsTrue(testString.TryParseToLocalDate(out DateTime result));
         }
